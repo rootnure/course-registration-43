@@ -10,8 +10,8 @@ const Course = ({ course, handleSelectCourse }) => {
                 <img src={img} alt="Shoes" className="rounded-xl w-full" />
             </figure>
             <div className="flex flex-col p-6 space-y-2 text-justify">
-                <h2 className="font-bold text-left text-xl">{title}</h2>
-                <p className='text-gray-500 leading-snug max-h-[100px] overflow-auto border-b-2'>{description}</p>
+                <h2 className="font-bold text-left text-xl xl:text-base 2xl:text-xl">{title}</h2>
+                <p className='text-gray-500 leading-snug max-h-[100px] overflow-auto border-b-2 text-base xl:text-sm 2xl:text-base'>{description}</p>
                 <div className="flex justify-between pt-2">
                     <p className='flex items-center'><span className='scale-150 mr-2'><BiDollar></BiDollar></span> Price : {price}</p>
                     <p className='flex items-center'><span className='scale-150 mr-2'><FiBookOpen></FiBookOpen></span> Credit : {credit}hr</p>

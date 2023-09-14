@@ -48,7 +48,7 @@ const Main = () => {
     }, [])
 
     return (
-        <main className="grid grid-cols-4 gap-6 container mx-auto">
+        <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto">
             <Courses
                 courses={courses}
                 handleSelectCourse={handleSelectCourse}
