@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types';
+import Course from '../Course/Course';
 const Courses = ({courses}) => {
     return (
-        <section className='lg:col-span-3'>
-            <div className="grid grid-cols-1 lg:grid-cols-3">
+        <section className='col-span-3 mb-8'>
+            <div className="grid grid-cols-3 gap-6">
                 {
-                    courses.map(course => console.log(course))
+                    courses.map(course => <Course
+                        key={course._id}
+                        course={course}
+                    ></Course>)
                 }
             </div>
         </section>
