@@ -14,19 +14,23 @@ const Main = () => {
     const [totalPrice, setTotalPrice] = useState(0);
 
     const showToast = (msg, toastType) => {
-        if(toastType === 'warn') {
-            toast.warn(msg);
-        }
-        else if(toastType === "success") {
-            toast.success(msg);
-        }
-        else if(toastType === "info") {
-            toast.info(msg);
+        switch (toastType) {
+            case 'warn':
+                toast.warn(msg);
+                return;
+            case 'success':
+                toast.success(msg);
+                return;
+            case 'error':
+                toast.error(msg);
+                return;
+            default:
+                toast.info(msg);
         }
     }
 
     const updateRegistrationSummary = (newCourse) => {
-        const {credit, title, price} = newCourse;
+        const { credit, title, price } = newCourse;
         setCreditHrRemaining(creditHrRemaining - credit);
         setListCourse([...listCourse, title]);
         setTotalCreditTaken(totalCreditTaken + credit);
@@ -34,7 +38,7 @@ const Main = () => {
     }
 
     const handleSelectCourse = newCourse => {
-        creditHrRemaining === newCourse.credit ? (setRegisteredCourses([...registeredCourses, newCourse]), updateRegistrationSummary(newCourse), showToast('Maximum Credit Taken!', 'info')) : creditHrRemaining < newCourse.credit ? showToast('Cannot take over 20 credit!', 'warn') : registeredCourses.map(course => course._id).includes(newCourse._id) ? showToast('Course already added', 'warn') : (setRegisteredCourses([...registeredCourses, newCourse]), updateRegistrationSummary(newCourse));
+        creditHrRemaining === newCourse.credit ? (setRegisteredCourses([...registeredCourses, newCourse]), updateRegistrationSummary(newCourse), showToast('Congratulation!!! Maximum Credit Taken!', 'success')) : creditHrRemaining < newCourse.credit ? showToast('Cannot take over 20 credit!', 'error') : registeredCourses.map(course => course._id).includes(newCourse._id) ? showToast('Course already added', 'warn') : (setRegisteredCourses([...registeredCourses, newCourse]), updateRegistrationSummary(newCourse));
     }
 
     useEffect(() => {
@@ -56,13 +60,13 @@ const Main = () => {
                 totalPrice={totalPrice}
             ></RegistrationSummary>
             <ToastContainer
-                position= "top-right"
-                autoClose= {5000}
-                hideProgressBar= {false}
-                closeOnClick= {true}
-                pauseOnHover= {false}
-                draggable= {false}
-                theme= "colored"
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                closeOnClick={true}
+                pauseOnHover={false}
+                draggable={false}
+                theme="colored"
             ></ToastContainer>
         </main>
     );

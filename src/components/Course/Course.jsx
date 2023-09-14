@@ -3,7 +3,7 @@ import { BiDollar } from 'react-icons/Bi';
 import { FiBookOpen } from 'react-icons/Fi';
 
 const Course = ({ course, handleSelectCourse }) => {
-    const {img, title, description, price, credit} = course;
+    const { img, title, description, price, credit } = course;
     return (
         <div className="card card-compact bg-base-100 shadow-xl">
             <figure className="px-4 pt-4">
@@ -17,7 +17,7 @@ const Course = ({ course, handleSelectCourse }) => {
                     <p className='flex items-center'><span className='scale-150 mr-2'><FiBookOpen></FiBookOpen></span> Credit : {credit}hr</p>
                 </div>
                 <div className="card-actions">
-                    <button 
+                    <button
                         onClick={() => handleSelectCourse(course)}
                         className="btn w-full text-white font-bold bg-blue-500 hover:bg-blue-400 normal-case text-xl">Select</button>
                 </div>

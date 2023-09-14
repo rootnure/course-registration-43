@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-const RegistrationSummary = ({creditHrRemaining, listCourse, totalCreditTaken, totalPrice}) => {
+const RegistrationSummary = ({ creditHrRemaining, listCourse, totalCreditTaken, totalPrice }) => {
     return (
         <aside className="relative w-full">
             <div className="p-6 bg-white rounded-xl space-y-4 sticky top-6 w-full">
