@@ -6,22 +6,35 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 const Main = () => {
-    
     const [courses, setCourses] = useState([]);
+    const [registeredCourses, setRegisteredCourses] = useState([]);
+    const [creditHrRemaining, setCreditHrRemaining] = useState(20);
+    const [listCourse, setListCourse] = useState([]);
+    const [totalCreditTaken, setTotalCreditTaken] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
 
-    const [registeredCourseIds, setRegisteredCourseIds] = useState([]);
-
-    const showToast = (msg, type) => {
-        if(type === 'warn') {
+    const showToast = (msg, toastType) => {
+        if(toastType === 'warn') {
             toast.warn(msg);
         }
-        else if(type === "success") {
+        else if(toastType === "success") {
             toast.success(msg);
+        }
+        else if(toastType === "info") {
+            toast.info(msg);
         }
     }
 
-    const handleSelectCourse = newCourseId => {
-        registeredCourseIds.includes(newCourseId) ? showToast('Course already added', 'warn') : setRegisteredCourseIds([...registeredCourseIds, newCourseId]);
+    const updateRegistrationSummary = (newCourse) => {
+        const {credit, title, price} = newCourse;
+        setCreditHrRemaining(creditHrRemaining - credit);
+        setListCourse([...listCourse, title]);
+        setTotalCreditTaken(totalCreditTaken + credit);
+        setTotalPrice(totalPrice + price);
+    }
+
+    const handleSelectCourse = newCourse => {
+        creditHrRemaining === newCourse.credit ? (setRegisteredCourses([...registeredCourses, newCourse]), updateRegistrationSummary(newCourse), showToast('Maximum Credit Taken!', 'info')) : creditHrRemaining < newCourse.credit ? showToast('Cannot take over 20 credit!', 'warn') : registeredCourses.map(course => course._id).includes(newCourse._id) ? showToast('Course already added', 'warn') : (setRegisteredCourses([...registeredCourses, newCourse]), updateRegistrationSummary(newCourse));
     }
 
     useEffect(() => {
@@ -31,12 +44,17 @@ const Main = () => {
     }, [])
 
     return (
-        <main className="grid grid-cols-4 gap-8 container mx-auto">
+        <main className="grid grid-cols-4 gap-6 container mx-auto">
             <Courses
                 courses={courses}
                 handleSelectCourse={handleSelectCourse}
             ></Courses>
-            <RegistrationSummary></RegistrationSummary>
+            <RegistrationSummary
+                creditHrRemaining={creditHrRemaining}
+                listCourse={listCourse}
+                totalCreditTaken={totalCreditTaken}
+                totalPrice={totalPrice}
+            ></RegistrationSummary>
             <ToastContainer
                 position= "top-right"
                 autoClose= {5000}
