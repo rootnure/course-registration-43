@@ -1,8 +1,8 @@
 const RegistrationSummary = () => {
     return (
         <aside className="relative w-full">
-            <div className="p-6 bg-white rounded-xl space-y-6 sticky top-6 w-full">
-                <h3 className="text-xl font-bold text-blue-400">Credit Hour Remaining {0} hr</h3>
+            <div className="p-6 bg-white rounded-xl space-y-4 sticky top-6 w-full">
+                <h3 className="text-xl font-extrabold text-blue-400 text-center">Credit Hour Remaining {0} hr</h3>
                 <hr />
                 <h2 className="text-2xl font-bold">Course Name</h2>
                 <ol className="text-lg text-gray-500 list-decimal list-inside">
