@@ -38,7 +38,9 @@ const Main = () => {
     }
 
     const handleSelectCourse = newCourse => {
-        creditHrRemaining === newCourse.credit ? (setRegisteredCourses([...registeredCourses, newCourse]), updateRegistrationSummary(newCourse), showToast('Congratulation!!! Maximum Credit Taken!', 'success')) : creditHrRemaining < newCourse.credit ? showToast('Cannot take over 20 credit!', 'error') : registeredCourses.map(course => course._id).includes(newCourse._id) ? showToast('Course already added', 'warn') : (setRegisteredCourses([...registeredCourses, newCourse]), updateRegistrationSummary(newCourse));
+        const registeredCourseIds = registeredCourses.map(course => course._id);
+
+        registeredCourseIds.includes(newCourse._id) ? showToast('Course already added', 'warn') : creditHrRemaining > newCourse.credit ? (updateRegistrationSummary(newCourse), setRegisteredCourses([...registeredCourses, newCourse])) : creditHrRemaining === newCourse.credit ? (updateRegistrationSummary(newCourse), setRegisteredCourses([...registeredCourses, newCourse]), showToast('Congratulation!!! Maximum Credit Taken!', 'success')) : showToast('Cannot take over 20 credit!', 'error');
     }
 
     useEffect(() => {
