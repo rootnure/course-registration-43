@@ -1,0 +1,74 @@
+[
+    {
+        "_id": "5f85f9bca9b8c01ddc9d2f41",
+        "img": "https://i.ibb.co/QHxwnv8/c-programming.png",
+        "title": "Introduction to C Programming",
+        "description": "C programming is a versatile, widely-used language. It's efficient, close to hardware, and fosters a deep understanding of computer systems. Essential for system-level programming, it's employed in embedded systems, game development, and more.",
+        "price": 15000,
+        "credit": 1
+    },
+    {
+        "_id": "5f85f9bca9b8c01ddc9d2f42",
+        "img": "https://i.ibb.co/MhxwrY9/algorithm.png",
+        "title": "Introduction to Algorithm",
+        "description": "An algorithm is a step-by-step procedure or set of rules for solving a specific problem or task. It's fundamental in computer science, guiding the development of software, data analysis, and decision-making processes.",
+        "price": 25000,
+        "credit": 2
+    },
+    {
+        "_id": "5f85f9bca9b8c01ddc9d2f43",
+        "img": "https://i.ibb.co/nDH5xbt/cpp.png",
+        "title": "Introduction to C++ for DSA",
+        "description": "C++ is a powerful, object-oriented programming language derived from C. It combines efficiency with modern features like classes and templates. Widely used in software development for applications, games, and systems.",
+        "price": 10000,
+        "credit": 10
+    },
+    {
+        "_id": "5f85f9bca9b8c01ddc9d2f44",
+        "img": "https://i.ibb.co/ZKGsf5y/data-structure.png",
+        "title": "Basic Data Structures",
+        "description": "Data structures are ways of organizing and storing data for efficient access and manipulation. They include arrays, linked lists, trees, and more. Crucial in computer science, they optimize data handling in software.",
+        "price": 35000,
+        "credit": 5
+    },
+    {
+        "_id": "5f85f9bca9b8c01ddc9d2f45",
+        "img": "https://i.ibb.co/52mKTNd/python-oop.png",
+        "title": "Introduction to Python OOP",
+        "description": "Python supports Object-Oriented Programming (OOP) paradigms. It involves creating and using objects, which bundle data and methods, fostering modular, reusable code. In Python, OOP simplifies complex systems and enhances code organization.",
+        "price": 19000,
+        "credit": 5
+    },
+    {
+        "_id": "5f85f9bca9b8c01ddc9d2f46",
+        "img": "https://i.ibb.co/74S66sf/swe.png",
+        "title": "Software Engineering",
+        "description": "Software engineering is a disciplined approach to designing, developing, testing, and maintaining software systems. It encompasses project management, quality assurance, and methodologies like Agile, ensuring efficient, reliable, and scalable software solutions.",
+        "price": 23000,
+        "credit": 2
+    },
+    {
+        "_id": "5f85f9bca9b8c01ddc9d2f47",
+        "img": "https://i.ibb.co/1z2Nw8m/aws.png",
+        "title": "AWS, Cloud Computing",
+        "description": "AWS (Amazon Web Services) is a leading cloud computing platform, offering a vast range of scalable, on-demand services. Cloud computing involves delivering computing resources over the internet, enabling cost-effective, flexible, and accessible IT solutions.",
+        "price": 35000,
+        "credit": 5
+    },
+    {
+        "_id": "5f85f9bca9b8c01ddc9d2f48",
+        "img": "https://i.ibb.co/gwDp7SS/mysql-db.png",
+        "title": "Database (MySQL)",
+        "description": "MySQL is a popular open-source relational database management system. It stores and manages structured data, making it efficient for data retrieval, storage, and manipulation in various applications, from web development to enterprise solutions.",
+        "price": 19000,
+        "credit": 5
+    },
+    {
+        "_id": "5f85f9bca9b8c01ddc9d2f49",
+        "img": "https://i.ibb.co/ZLR2LqN/problem-solving.png",
+        "title": "Problem-Solving Part",
+        "description": "Problem solving is a critical skill involving the systematic approach to identifying, analyzing, and finding solutions to challenges or issues. It's fundamental in various fields, from mathematics and science to everyday life and business.",
+        "price": 23000,
+        "credit": 2
+    }
+]
