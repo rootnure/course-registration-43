@@ -1,34 +1,51 @@
 # Welcome to Basic React Assignment (Course Registration Project)
 
+<br><br>
+
 ## Live Links:
 - Netlify (Primary): [Click Here](https://course-registration-a5bc81.netlify.app/)
 - Surge (Secondary): [Click Here](http://living-boys.surge.sh/)
 
+
+<br><br>
+
+
 ## Question Answers
 
+<br>
+
 ### 1. Project Features
-- User can add new course to the course list
-- Credit hour remaining set to <strong>20</strong>, Credit taken set to <strong>0</strong>, Total Cost set to <strong>0</strong>, <strong>No course added</strong> text added dynamically by default
-- <strong>Remaining Credit</strong>, <strong>Course Name List</strong>, <strong>Total Credit</strong>and <strong> Total Price</strong> will change after a successful course added to registration
-- If new course credit is less than or equal to remaining credit, course will be added to course list under "<strong>Course Name</strong>"
-- If new course is added previously, a <strong>warning toast</strong> will appear and won't added again
-- If new course credit is grater than remaining credit, an <strong>error toast</strong> will be shown
-- If courses' total credit is equal to maximum credit (<strong>20</strong>), a <strong>success toast</strong> will appear
-- Project is compatible (<em>responsive</em>) to all devices (i.e. <strong>Mobile</strong>, <strong>Tablet</strong>, <strong>Laptop</strong>, <strong>Desktop</strong>)
+
+- User can add new course to the course list.
+- Credit hour remaining set to `20`, Credit taken set to `0`, Total Cost set to `0`, *`No course added`* text added dynamically by default.
+- **Remaining Credit**, **Course Name List**, **Total Credit** and **Total Price** will change after a successful course added to registration.
+- If new course credit is less than or equal to remaining credit, course will be added to course list under "**Course Name**".
+- If a course is added previously, a **warning toast** will appear when try to add same course and won't added again to course list.
+- If a course credit is grater than remaining credit, an **error toast** will be shown when try to add that course and won't added to course list.
+- If courses' total credit is equal to maximum credit (**20**), a **success toast** will appear
+- Project is compatible (**responsive**) to all devices (`i.e.` ***Mobile***, ***Tablet***, ***Laptop***, ***Desktop***)
+
+<br>
 
 ### 2. How I managed the state in this assignment project
-- I've used a total of <strong>six</strong> states in this project.
-- Each get updated and hold data after any side effect or a new course is added. Individually,
-    - <strong><em>courses</em></strong> hold all course data from JSON
-    - <strong><em>registeredCourses</em></strong> hold registered courses data after a new course is added
-    - <strong><em>creditHrRemaining</em></strong> hold credit hour remaining after a new course is added
-    - <strong><em>listCourse</em></strong> hold all registered course name as an array of strings after a new course is added
-    - <strong><em>totalCreditTaken</em></strong> hold credit taken after a new course is added
-    - <strong><em>totalPrice</em></strong> hold total price after a new course is added
-- All this states are declared in both <strong>Courses</strong> and <strong>RegistrationSummary</strong>'s common parent <strong>Main.jsx</strong> so that the states can be shared and update accordingly.
-- Event handler for <strong>Select</strong> button is clicked inside a <em>child</em> component of <strong>Courses</strong> that trigger in parent component <strong>Main</strong> as the event is shared from grandparent <em>(Main.jsx)</em> to child <em>(Course.jsx)</em> component as props and states are updated according to description using event handler function.
 
-## React + Vite
+- I've used a total of **six** states in this project.
+
+![States Used in this project](./public/states-used.png "States Used")
+
+- Each get updated and hold data after any side effect or a new course is added. Individually,
+    - `courses` hold all course data from JSON after `fetch()`
+    - `registeredCourses` hold *registered courses data* after a new course is added
+    - `creditHrRemaining` hold *credit hour remaining* after a new course is added
+    - `listCourse` hold *all registered course name as an array of strings* after a new course is added
+    - `totalCreditTaken` hold *credit taken* after a new course is added
+    - `totalPrice` hold *total price* after a new course is added
+- All this states are declared in both **Courses** and **RegistrationSummary**'s common parent **Main.jsx** so that the states can be shared and update accordingly.
+- Event handler for **Select** button is clicked inside a *child* component of **Courses** that trigger in parent component **Main** as the event is shared from grandparent *(`Main.jsx`)* to child *(`Course.jsx`)* component as props and states are updated according to description using event handler function.
+
+<br><br><br><br>
+
+# React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
